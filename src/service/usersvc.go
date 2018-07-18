@@ -2,6 +2,7 @@ package service
 
 import (
 	"dac"
+	"fmt"
 	"model"
 )
 
@@ -21,6 +22,7 @@ func (*UserSvc) Users() []model.User {
 
 func (*UserSvc) UserById(citizenId string) model.User {
 	user := userDac.ReadById(citizenId)
+	fmt.Printf(user.CitizenID)
 	return user
 }
 
